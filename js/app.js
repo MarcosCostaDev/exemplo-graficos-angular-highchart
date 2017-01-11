@@ -49,18 +49,18 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
 
   $scope.change = function () {
 
-    $scope.contador = $scope.chartTypes.length > $scope.contador ? $scope.contador + 1 : 0;
+    $scope.contador = $scope.chartTypes.length != $scope.contador + 1 ? $scope.contador + 1 : 0;
     $scope.chartConfig.chart.type = $scope.chartTypes[$scope.contador].id;
 
     $scope.AtualGrafico = $scope.chartTypes[$scope.contador].title;
 
-    if ($scope.chartConfig.chart.type == "pie") {
+    if ($scope.chartConfig.chart.type == "pie" || $scope.chartConfig.chart.type == "funnel" ) {
       $scope.chartConfig = {
         chart: {
           plotBackgroundColor: null,
           plotBorderWidth: null,
           plotShadow: false,
-          type: 'pie'
+          type: $scope.chartConfig.chart.type
         },
         title: {
           text: 'Browser market shares January, 2015 to May, 2015'
