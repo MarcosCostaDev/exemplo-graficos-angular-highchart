@@ -41,6 +41,9 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
   $scope.contador = 0;
 
   $scope.change = function () {
+
+
+
     switch ($scope.contador) {
 
       case 0:
@@ -62,66 +65,9 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
             text: 'Step Down Count'
           }
         }
+
         break;
       case 1:
-        $scope.chartConfig = {
-
-           chart: {
-            type: 'bar'
-        },
-
-        title: {
-            text: 'Total fruit consumtion, grouped by gender'
-        },
-
-        xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Number of fruits'
-            }
-        },
-
-        tooltip: {
-            formatter: function () {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            }
-        },
-
-        series: [{
-            name: 'John',
-            data: [5, 3, 4, 7, 2],
-            stack: 'male'
-        }, {
-            name: 'Joe',
-            data: [3, 4, 4, 2, 5],
-            stack: 'male'
-        }, {
-            name: 'Jane',
-            data: [2, 5, 6, 2, 1],
-            stack: 'female'
-        }, {
-            name: 'Janet',
-            data: [3, 0, 4, 4, 3],
-            stack: 'female'
-        }]
-        }
-
-        break;
-
-case 2:
         $scope.chartConfig = {
 
           chart: {
@@ -141,12 +87,140 @@ case 2:
         }
 
         break;
+      case 2:
+        $scope.chartConfig = {
+          chart: {
+            type: 'bar'
+          },
+          title: {
+            text: 'Total New Clients & Readmit clients'
+          },
+          xAxis: {
+            categories: ["January", "Feb", "March", "April", "May", "juny"]
+          },
+          yAxis: {
+            min: 0,
+            title: {
+              text: 'Total New Clients & Readmit clients'
+            }
+          },
+          plotOptions: {
+            column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+            }
+          },
+          series: [{
+            name: 'Total number Clients',
+            data: [210, 300, 250, 350, 300, 320]
+          },
+          {
+            name: 'Total readmit',
+            data: [100, 69, 70, 50, 110, 111]
+          }]
+        }
+
+        break;
+      case 3:
+        $scope.chartConfig = {
+          chart: {
+            type: 'column'
+          },
+          title: {
+            text: 'Total New Clients & Readmit clients'
+          },
+          xAxis: {
+            categories: ["January", "Feb", "March", "April", "May", "juny"]
+          },
+          yAxis: {
+            min: 0,
+            title: {
+              text: 'Total New Clients & Readmit clients'
+            }
+          },
+          plotOptions: {},
+          legend: {
+            reversed: true
+          },
+          series: [{
+            name: 'Total new Clients',
+            data: [64, 31, 30, 50, 81, 57]
+          },
+          {
+            name: 'Total readmit clients',
+            data: [100, 69, 70, 50, 110, 111]
+          }]
+        }
+
+        break;
+      case 4:
+        $scope.chartConfig = {
+          chart: {
+            type: 'column'
+          },
+          title: {
+            text: 'Total New Clients & Readmit clients'
+          },
+          xAxis: {
+            categories: ["January", "Feb", "March", "April", "May", "juny"]
+          },
+          yAxis: {
+            title: {
+              text: 'Total New Clients & Readmit clients'
+            }
+          },
+          plotOptions: {
+            series: {
+              stacking: 'normal'
+            }
+          },
+          series: [{
+            name: 'Total new Clients',
+            data: [64, 31, 30, 50, 81, 57]
+          },
+          {
+            name: 'Total readmit clients',
+            data: [100, 69, 70, 50, 110, 111]
+          }]
+        }
+
+        break;
+        case 5:
+        $scope.chartConfig = {
+          chart: {
+            type: 'bar',
+            reversed:true
+          },
+          title: {
+            text: 'Total New Clients & Readmit clients'
+          },
+          xAxis: {
+            categories: ["Total new Clients", "Readmit clients"]
+          },
+          yAxis: {
+            title: {
+              text: 'Total New Clients & Readmit clients'
+            }
+          },
+          plotOptions: {
+            series: {
+              stacking: 'normal'
+            }
+          },
+          series: [{
+            name: 'Total new Clients',
+            data: [64, 31]
+          }]
+        }
+
+        break;
+
 
     }
 
     $scope.contador += 1;
 
-    if ($scope.contador == 3) {
+    if ($scope.contador == 6) {
       $scope.contador = 0;
     }
   }
@@ -164,172 +238,5 @@ case 2:
 
 
 
-
-  /*
-  
-    $scope.contador = 0;
-    $scope.AtualGrafico = $scope.chartTypes[$scope.contador].title;
-  
-  
-  
-    $scope.change = function () {
-  
-      $scope.contador = $scope.chartTypes.length != $scope.contador + 1 ? $scope.contador + 1 : 0;
-      $scope.chartConfig.chart.type = $scope.chartTypes[$scope.contador].id;
-  
-      $scope.AtualGrafico = $scope.chartTypes[$scope.contador].title;
-  
-      if ($scope.chartConfig.chart.type == "pie" || $scope.chartConfig.chart.type == "funnel") {
-        $scope.chartConfig = {
-          chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: $scope.chartConfig.chart.type,
-            inverted: false
-          },
-          title: {
-            text: 'Browser market shares January, 2015 to May, 2015'
-          },
-          tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-          },
-          plotOptions: {
-            pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                style: {
-                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                }
-              }
-            }
-          },
-          series: [{
-            name: 'Brands',
-            colorByPoint: true,
-            data: [{
-              name: 'Microsoft Internet Explorer',
-              y: 56.33
-            }, {
-              name: 'Chrome',
-              y: 24.03,
-              sliced: true,
-              selected: true
-            }, {
-              name: 'Firefox',
-              y: 10.38
-            }, {
-              name: 'Safari',
-              y: 4.77
-            }, {
-              name: 'Opera',
-              y: 0.91
-            }, {
-              name: 'Proprietary or Undetectable',
-              y: 0.2
-            }]
-          }]
-        }
-      }
-      else if ($scope.chartConfig.chart.type == "columnrange") {
-        $scope.chartConfig = {
-          chart: {
-            type: 'columnrange',
-            inverted: true
-          },
-  
-          title: {
-            text: 'Temperature variation by month'
-          },
-  
-          subtitle: {
-            text: 'Observed in Vik i Sogn, Norway'
-          },
-  
-          xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-          },
-  
-          yAxis: {
-            title: {
-              text: 'Temperature ( °C )'
-            }
-          },
-  
-          tooltip: {
-            valueSuffix: '°C'
-          },
-  
-          plotOptions: {
-            columnrange: {
-              dataLabels: {
-                enabled: true,
-                formatter: function () {
-                  return this.y + '°C';
-                }
-              }
-            }
-          },
-  
-          legend: {
-            enabled: false
-          },
-  
-          series: [{
-            name: 'Temperatures',
-            data: [
-              [-9.7, 9.4],
-              [-8.7, 6.5],
-              [-3.5, 9.4],
-              [-1.4, 19.9],
-              [0.0, 22.6],
-              [2.9, 29.5],
-              [9.2, 30.7],
-              [7.3, 26.5],
-              [4.4, 18.0],
-              [-3.1, 11.4],
-              [-5.2, 10.4],
-              [-13.5, 9.8]
-            ]
-          }]
-        }
-      }
-      else {
-       
-        $scope.chartConfig = {
-  
-          chart: {
-            type: $scope.chartTypes[$scope.contador].id,
-            inverted: false
-          },
-          plotOptions: {
-            series: {
-              stacking: ''
-            }
-          },
-          xAxis: {
-            categories: [
-              'Apples',
-              'Pears',
-              'Oranges',
-              'Bananas',
-              'Grapes',
-              'Plums',
-              'Strawberries',
-              'Raspberries']
-          },
-  
-          series: $scope.chartSeries,
-          title: {
-            text: 'Um simples grafico de exemplo'
-          }
-        }
-      }
-  
-    };
-  */
 
 
