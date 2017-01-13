@@ -37,7 +37,7 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
 
   ];
 
-
+$scope.chartConfig = {};
   $scope.contador = 0;
 
   $scope.change = function () {
@@ -90,15 +90,15 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
       case 2:
         $scope.chartConfig = {
           chart: {
-            type: 'bar'
+            type: 'column'
           },
           title: {
             text: 'Total New Clients & Readmit clients'
           },
-          xAxis: {
+          yAxis: {
             categories: ["January", "Feb", "March", "April", "May", "juny"]
           },
-          yAxis: {
+          xAxis: {
             min: 0,
             title: {
               text: 'Total New Clients & Readmit clients'
@@ -132,12 +132,7 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
           xAxis: {
             categories: ["January", "Feb", "March", "April", "May", "juny"]
           },
-          yAxis: {
-            min: 0,
-            title: {
-              text: 'Total New Clients & Readmit clients'
-            }
-          },
+
           plotOptions: {},
           legend: {
             reversed: true
@@ -164,11 +159,6 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
           xAxis: {
             categories: ["January", "Feb", "March", "April", "May", "juny"]
           },
-          yAxis: {
-            title: {
-              text: 'Total New Clients & Readmit clients'
-            }
-          },
           plotOptions: {
             series: {
               stacking: 'normal'
@@ -178,6 +168,7 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
             name: 'Total new Clients',
             data: [64, 31, 30, 50, 81, 57]
           },
+          
           {
             name: 'Total readmit clients',
             data: [100, 69, 70, 50, 110, 111]
@@ -185,23 +176,23 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
         }
 
         break;
-        case 5:
+      case 5:
         $scope.chartConfig = {
           chart: {
-            type: 'bar',
-            reversed:true
+            type: 'bar'
           },
           title: {
             text: 'Total New Clients & Readmit clients'
           },
-          xAxis: {
-            categories: ["Total new Clients", "Readmit clients"]
-          },
+       
           yAxis: {
+            min: 0,
             title: {
-              text: 'Total New Clients & Readmit clients'
+              text: 'Total new Clients'
             }
           },
+
+         
           plotOptions: {
             series: {
               stacking: 'normal'
@@ -209,13 +200,14 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
           },
           series: [{
             name: 'Total new Clients',
-            data: [64, 31]
+            data: [64]
+          },
+          {
+            name: 'Readmit clients',
+            data: [31]
           }]
         }
-
         break;
-
-
     }
 
     $scope.contador += 1;
@@ -224,11 +216,6 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
       $scope.contador = 0;
     }
   }
-
-  $scope.chartConfig = {
-
-  }
-
 
   $scope.reflow = function () {
     $scope.$broadcast('highchartsng.reflow');
