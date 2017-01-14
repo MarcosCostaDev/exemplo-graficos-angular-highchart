@@ -1,42 +1,47 @@
 angular.module('testechart')
-    .controller("totalNewclientsController", ["$scope", "$location", function ($scope, $location) {
+    .controller("graficoTotalDetoxAmasPercentController", ["$scope", "$location", function ($scope, $location) {
+
 
         $scope.chartConfig = {
             chart: {
                 type: 'column'
             },
-            colors: ['#db3912', "#3266cb"],
+            colors: ["#3266cb"],
             title: {
-                text: 'Total New Clients & Readmit clients'
+                text: 'Total Detox AMAs'
             },
-            yAxis:{
+            yAxis: {
 
                 title: {
-                    text: 'Total New clients'
-                }
+                    text: 'Detox AMAs'
+                },
+                labels: {
+                    formatter: function () {
+                        return this.value + ' %';
+                    }
+                },
             },
             xAxis: {
                 title: {
                     text: 'Month'
                 },
+
                 categories: ["January", "Feb", "March", "April", "May", "june", "july", "August", "September", "October"]
             },
+            tooltip: {
+                pointFormat: "Value: {point.y:.2f} %"
+            },
             plotOptions: {
-                series: {
-                    stacking: 'normal'
-                }
+
+
             },
             series: [{
-                name: 'Total new Clients',
-                data: [59, 69, 70, 81, 57, 60, 61, 48, 38, 54]
+                name: 'Detox AMAs',
+                data: [10, 22, 14, 17, 7, 10, 20, 25, 14, 11]
+
             },
-
-            {
-                name: 'Total readmit clients',
-                data: [105, 96, 92, 104, 96, 105, 109, 111, 103, 109]
-            }]
+            ]
         };
-
         $scope.reflow = function () {
             $scope.$broadcast('highchartsng.reflow');
         };
@@ -44,6 +49,7 @@ angular.module('testechart')
         $scope.voltar = function () {
             $location.path("/principal");
         }
+
 
 
     }]);

@@ -1,19 +1,17 @@
 angular.module('testechart')
-    .controller("graficoBarController", ["$scope", "$location", function ($scope, $location) {
+    .controller("graficoCurrentCensusController", ["$scope", "$location", function ($scope, $location) {
 
         $scope.chartConfig = {
             chart: {
                 type: 'bar'
             },
             title: {
-                text: 'Total New Clients & Readmit clients'
+                text: 'Current Census (from Bed Board)'
             },
-             colors: ['#db3912', "#3266cb"],
+            colors: ['#db3912', "#3266cb"],
             yAxis: {
-                min: 0,
-                title: {
-                    text: 'Total new Clients'
-                }
+                min: 0
+
             },
 
 
@@ -23,12 +21,12 @@ angular.module('testechart')
                 }
             },
             series: [{
-                name: 'Total new Clients',
-                data: [63]
+                name: 'Delux Census',
+                data: [64]
             },
             {
                 name: 'Readmit clients',
-                data: [32]
+                data: [31]
             }]
         }
 

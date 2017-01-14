@@ -1,18 +1,19 @@
 angular.module('testechart')
-    .controller("totalNewclientsController", ["$scope", "$location", function ($scope, $location) {
+    .controller("graficoTotalDetoxAmasController", ["$scope", "$location", function ($scope, $location) {
+
 
         $scope.chartConfig = {
             chart: {
                 type: 'column'
             },
-            colors: ['#db3912', "#3266cb"],
+            colors: ["#3266cb"],
             title: {
-                text: 'Total New Clients & Readmit clients'
+                text: 'Total Detox AMAs'
             },
-            yAxis:{
+            yAxis: {
 
                 title: {
-                    text: 'Total New clients'
+                    text: 'Detox AMAs'
                 }
             },
             xAxis: {
@@ -22,21 +23,13 @@ angular.module('testechart')
                 categories: ["January", "Feb", "March", "April", "May", "june", "july", "August", "September", "October"]
             },
             plotOptions: {
-                series: {
-                    stacking: 'normal'
-                }
+
             },
             series: [{
-                name: 'Total new Clients',
-                data: [59, 69, 70, 81, 57, 60, 61, 48, 38, 54]
-            },
-
-            {
-                name: 'Total readmit clients',
-                data: [105, 96, 92, 104, 96, 105, 109, 111, 103, 109]
+                name: 'Detox AMAs',
+                data: [17, 36, 22, 31, 10, 16, 34, 39, 20, 18]
             }]
         };
-
         $scope.reflow = function () {
             $scope.$broadcast('highchartsng.reflow');
         };
@@ -44,6 +37,7 @@ angular.module('testechart')
         $scope.voltar = function () {
             $location.path("/principal");
         }
+
 
 
     }]);

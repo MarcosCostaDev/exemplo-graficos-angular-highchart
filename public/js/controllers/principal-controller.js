@@ -11,8 +11,23 @@ angular.module('testechart')
             $location.path("/graficoPie");
         }
 
-        $scope.totalNewclients = function(){
+        $scope.totalNewclients = function () {
             $location.path("/totalNewclients");
+        }
+        $scope.graficoCurrentCensus = function () {
+            $location.path("/graficoCurrentCensus");
+        }
+
+        $scope.graficoTotalDetoxAmas = function () {
+            $location.path("/graficoTotalDetoxAmas");
+        }
+
+        $scope.graficoTotalDetoxAmasPercent = function () {
+            $location.path("/graficoTotalDetoxAmasPercent");
+        }
+
+        $scope.graficoTotalDetoxAmasTreatment = function () {
+            $location.path("/graficoTotalDetoxAmasTreatment");
         }
 
     }]);
