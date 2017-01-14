@@ -1,7 +1,42 @@
 'use strict';
 
-var testechart = angular.module('testechart', ["highcharts-ng"]);
+var testechart = angular.module('testechart', ["highcharts-ng", "ngRoute"]).config([
+  "$routeProvider", function ($routeProvider) {
+    $routeProvider
+      .when("/graficoBar"
+      , {
+        templateUrl: "partials/grafico-bar.html"
+        , controller: "graficoBarController"
+      })
+      .when("/graficoColumn"
+      , {
+        templateUrl: "partials/grafico-column.html"
+        , controller: "graficoColumnController"
+      })
+      .when("/graficoPie"
+      , {
+        templateUrl: "partials/grafico-pie.html"
+        , controller: "graficoPieController"
+      })
+       .when("/totalNewclients"
+      , {
+        templateUrl: "partials/grafico-total-new-clients.html"
+        , controller: "totalNewclientsController"
+      })
+      .when("/principal"
+      , {
+        templateUrl: "partials/principal.html"
+        , controller: "principalController"
+      })
 
+      .otherwise(
+      {
+        redirectTo: "/principal"
+      }
+      );
+
+  }]);
+/*
 testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $http) {
   $scope.chartTypes = [
     { "id": "line", "title": "Line" },
@@ -37,7 +72,7 @@ testechart.controller('testecontroller', ['$scope', '$http', function ($scope, $
 
   ];
 
-$scope.chartConfig = {};
+  $scope.chartConfig = {};
   $scope.contador = 0;
 
   $scope.change = function () {
@@ -168,7 +203,7 @@ $scope.chartConfig = {};
             name: 'Total new Clients',
             data: [64, 31, 30, 50, 81, 57]
           },
-          
+
           {
             name: 'Total readmit clients',
             data: [100, 69, 70, 50, 110, 111]
@@ -184,7 +219,7 @@ $scope.chartConfig = {};
           title: {
             text: 'Total New Clients & Readmit clients'
           },
-       
+
           yAxis: {
             min: 0,
             title: {
@@ -192,7 +227,7 @@ $scope.chartConfig = {};
             }
           },
 
-         
+
           plotOptions: {
             series: {
               stacking: 'normal'
@@ -226,4 +261,4 @@ $scope.chartConfig = {};
 
 
 
-
+*/

@@ -1,0 +1,27 @@
+{
+  "name": "exemplo-graficos-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoslcosta/exemplo-graficos-angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcoslcosta/exemplo-graficos-angular/issues"
+  },
+  "homepage": "https://github.com/marcoslcosta/exemplo-graficos-angular#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^1.11.2",
+    "jshint-stylish": "^2.0.1"
+  },
+  "dependencies": {}
+}
