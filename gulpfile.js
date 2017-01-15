@@ -25,7 +25,7 @@ gulp.task("clean", function () {
 
 gulp.task("build-js", function () {
 
-    gulp.src(
+    return gulp.src(
         [
             "docs/js/lib/jquery.min.js",
             "docs/js/lib/angular.min.js",
@@ -36,19 +36,19 @@ gulp.task("build-js", function () {
             "docs/js/lib/highcharts-more.js",
             "docs/js/lib/funnel.js",
             "docs/js/app.js",
-            "docs/js/controller/principal-controller.js",
-            "docs/js/controller/grafico-amas-by-case-manager-controller.js",
-            "docs/js/controller/grafico-amas-by-case-manager-percent-controller.js",
-            "docs/js/controller/grafico-bar-controller.js",
-            "docs/js/controller/grafico-campaign-step-downs-controller.js",
-            "docs/js/controller/grafico-column-controller.js",
-            "docs/js/controller/grafico-current-census.js",
-            "docs/js/controller/grafico-step-down-by-cm-controller.js",
-            "docs/js/controller/grafico-step-down-new-clients-percent-controller.js",
-            "docs/js/controller/grafico-total-detox-amas-controller.js",
-            "docs/js/controller/grafico-total-detox-amas-percent-controller.js",
-            "docs/js/controller/grafico-total-detox-clients-treatment-controller.js",
-            "docs/js/controller/total-new-clients-controller.js"
+            "docs/js/controllers/principal-controller.js",
+            "docs/js/controllers/grafico-amas-by-case-manager-controller.js",
+            "docs/js/controllers/grafico-amas-by-case-manager-percent-controller.js",
+            "docs/js/controllers/grafico-bar-controller.js",
+            "docs/js/controllers/grafico-campaign-step-downs-controller.js",
+            "docs/js/controllers/grafico-column-controller.js",
+            "docs/js/controllers/grafico-current-census.js",
+            "docs/js/controllers/grafico-step-down-by-cm-controller.js",
+            "docs/js/controllers/grafico-step-down-new-clients-percent-controller.js",
+            "docs/js/controllers/grafico-total-detox-amas-controller.js",
+            "docs/js/controllers/grafico-total-detox-amas-percent-controller.js",
+            "docs/js/controllers/grafico-total-detox-clients-treatment-controller.js",
+            "docs/js/controllers/total-new-clients-controller.js"
 
         ])
         .pipe(concat('all.js'))
@@ -65,6 +65,30 @@ gulp.task("build-html", function () {
             js: "js/all.js"
         }))
         .pipe(gulp.dest("docs"))
+
+});
+
+
+gulp.task("delete-controllers-js", function () {
+
+    return gulp.src('docs/js/controllers', {read: false})
+        .pipe(clean());
+
+});
+
+
+gulp.task("delete-lib-js", function () {
+
+    return gulp.src('docs/js/lib', {read: false})
+        .pipe(clean());
+
+});
+
+
+gulp.task("delete-files-js", function () {
+
+    return gulp.src('docs/js/app.js', {read: false})
+        .pipe(clean());
 
 });
 
