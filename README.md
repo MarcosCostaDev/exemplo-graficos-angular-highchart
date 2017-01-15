@@ -3,4 +3,4 @@ Criando um exemplo de graficos com Angular
 
 use npm run gulp server 
 
-Github pages https://marcoslcosta.github.io/exemplo-graficos-angular/
+Exibição: https://marcoslcosta.github.io/exemplo-graficos-angular/
