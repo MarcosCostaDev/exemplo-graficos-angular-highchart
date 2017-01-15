@@ -37,18 +37,7 @@ gulp.task("build-js", function () {
             "docs/js/lib/funnel.js",
             "docs/js/app.js",
             "docs/js/controllers/principal-controller.js",
-            "docs/js/controllers/grafico-amas-by-case-manager-controller.js",
-            "docs/js/controllers/grafico-amas-by-case-manager-percent-controller.js",
-            "docs/js/controllers/grafico-bar-controller.js",
-            "docs/js/controllers/grafico-campaign-step-downs-controller.js",
-            "docs/js/controllers/grafico-column-controller.js",
-            "docs/js/controllers/grafico-current-census.js",
-            "docs/js/controllers/grafico-step-down-by-cm-controller.js",
-            "docs/js/controllers/grafico-step-down-new-clients-percent-controller.js",
-            "docs/js/controllers/grafico-total-detox-amas-controller.js",
-            "docs/js/controllers/grafico-total-detox-amas-percent-controller.js",
-            "docs/js/controllers/grafico-total-detox-clients-treatment-controller.js",
-            "docs/js/controllers/total-new-clients-controller.js"
+            "docs/js/controllers/*.js"
 
         ])
         .pipe(concat('all.js'))
