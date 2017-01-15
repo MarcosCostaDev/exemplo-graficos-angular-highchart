@@ -1,5 +1,5 @@
 angular.module('testechart')
-    .controller("graficoTotalDetoxAmasPercentController", ["$scope", "$location", function ($scope, $location) {
+    .controller("graficoCampaignStepDownPercentController", ["$scope", "$location", function ($scope, $location) {
 
 
         $scope.chartConfig = {
@@ -36,8 +36,8 @@ angular.module('testechart')
 
             },
             series: [{
-                name: 'Detox AMAs',
-                data: [10, 22, 14, 17, 7, 10, 20, 25, 14, 11]
+                name: '% of SD on New Clients',
+                data: [43, 39, 32, 34, 52, 55, 59, 56, 57, 54]
 
             },
             ]

@@ -29,5 +29,19 @@ angular.module('testechart')
         $scope.graficoTotalDetoxAmasTreatment = function () {
             $location.path("/graficoTotalDetoxAmasTreatment");
         }
+        $scope.graficoCampaignStepDown = function () {
+            $location.path("/graficoCampaignStepDown");
+        }
+
+        $scope.graficoCampaignStepDownPercent = function () {
+            $location.path("/graficoCampaignStepDownPercent");
+        }
+
+         $scope.amasByCaseManage = function () {
+            $location.path("/amasByCaseManage");
+        }
+        $scope.amasByCaseManagePercent= function () {
+            $location.path("/amasByCaseManagePercent");
+        }
 
     }]);

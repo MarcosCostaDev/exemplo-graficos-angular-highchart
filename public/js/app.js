@@ -1,6 +1,6 @@
 var testechart = angular.module('testechart', ["highcharts-ng", "ngRoute"]).config([
   "$routeProvider", function ($routeProvider) {
-    
+
     $routeProvider
       .when("/principal"
       , {
@@ -47,6 +47,26 @@ var testechart = angular.module('testechart', ["highcharts-ng", "ngRoute"]).conf
       , {
         templateUrl: "partials/grafico-partial.html"
         , controller: "graficoTotalDetoxAmasTreatmentController"
+      })
+      .when("/graficoCampaignStepDown"
+      , {
+        templateUrl: "partials/grafico-partial.html"
+        , controller: "graficoCampaignStepDownController"
+      })
+      .when("/graficoCampaignStepDownPercent"
+      , {
+        templateUrl: "partials/grafico-partial.html"
+        , controller: "graficoCampaignStepDownPercentController"
+      })
+       .when("/amasByCaseManage"
+      , {
+        templateUrl: "partials/grafico-partial.html"
+        , controller: "amasByCaseManageController"
+      })
+       .when("/amasByCaseManagePercent"
+      , {
+        templateUrl: "partials/grafico-partial.html"
+        , controller: "amasByCaseManagePercentController"
       })
 
       .otherwise(
