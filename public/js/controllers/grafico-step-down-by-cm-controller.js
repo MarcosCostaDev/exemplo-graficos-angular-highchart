@@ -8,6 +8,9 @@ angular.module('testechart')
             title: {
                 text: 'Current Census (from Bed Board)'
             },
+            credits: {
+                enabled: false
+            },
             colors: [
                 "#dd4578",
                 "#009ac4",
@@ -52,9 +55,5 @@ angular.module('testechart')
         $scope.reflow = function () {
             $scope.$broadcast('highchartsng.reflow');
         };
-
-        $scope.voltar = function () {
-            $location.path("/principal");
-        }
 
     }]);

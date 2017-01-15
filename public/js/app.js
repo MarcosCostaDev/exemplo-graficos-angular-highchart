@@ -12,7 +12,7 @@ var testechart = angular.module('testechart', ["highcharts-ng", "ngRoute"]).conf
         templateUrl: "partials/grafico-partial.html"
         , controller: "graficoBarController"
       })
-      .when("/graficoColumn"
+      .when("/graficoColunm"
       , {
         templateUrl: "partials/grafico-partial.html"
         , controller: "graficoColumnController"

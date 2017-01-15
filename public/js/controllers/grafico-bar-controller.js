@@ -8,6 +8,9 @@ angular.module('testechart')
             title: {
                 text: 'Total New Clients & Readmit clients'
             },
+            credits: {
+                enabled: false
+            },
              colors: ['#db3912', "#3266cb"],
             yAxis: {
                 min: 0,
@@ -36,8 +39,5 @@ angular.module('testechart')
             $scope.$broadcast('highchartsng.reflow');
         };
 
-        $scope.voltar = function () {
-            $location.path("/principal");
-        }
 
     }]);

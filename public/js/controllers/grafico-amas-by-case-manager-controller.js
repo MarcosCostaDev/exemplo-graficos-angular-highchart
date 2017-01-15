@@ -5,6 +5,9 @@ angular.module('testechart')
             chart: {
                 type: 'column'
             },
+            credits: {
+                enabled: false
+            },
             colors: [
 
                 "#dd4578",
@@ -64,10 +67,6 @@ angular.module('testechart')
         $scope.reflow = function () {
             $scope.$broadcast('highchartsng.reflow');
         };
-
-        $scope.voltar = function () {
-            $location.path("/principal");
-        }
 
 
     }]);

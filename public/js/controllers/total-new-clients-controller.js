@@ -5,6 +5,9 @@ angular.module('testechart')
             chart: {
                 type: 'column'
             },
+            credits: {
+                enabled: false
+            },
             colors: ['#db3912', "#3266cb"],
             title: {
                 text: 'Total New Clients & Readmit clients'
@@ -41,9 +44,7 @@ angular.module('testechart')
             $scope.$broadcast('highchartsng.reflow');
         };
 
-        $scope.voltar = function () {
-            $location.path("/principal");
-        }
+  
 
 
     }]);

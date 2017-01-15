@@ -7,6 +7,9 @@ angular.module('testechart')
             chart: {
                 type: "column"
             },
+            credits: {
+                enabled: false
+            },
             xAxis: {
                 categories: ["January", "Feb", "March", "April", "May", "juny", "july", "Aug", "Sept"]
             },
@@ -25,9 +28,6 @@ angular.module('testechart')
             $scope.$broadcast('highchartsng.reflow');
         };
 
-        $scope.voltar = function () {
-            $location.path("/principal");
-        }
 
 
 

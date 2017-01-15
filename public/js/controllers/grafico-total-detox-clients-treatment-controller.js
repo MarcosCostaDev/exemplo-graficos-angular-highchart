@@ -7,6 +7,9 @@ angular.module('testechart')
             chart: {
                 type: "column"
             },
+            credits: {
+                enabled: false
+            },
             yAxis: {
 
                 title: {
@@ -32,10 +35,6 @@ angular.module('testechart')
         $scope.reflow = function () {
             $scope.$broadcast('highchartsng.reflow');
         };
-
-        $scope.voltar = function () {
-            $location.path("/principal");
-        }
 
 
 

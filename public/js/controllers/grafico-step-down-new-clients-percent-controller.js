@@ -6,6 +6,9 @@ angular.module('testechart')
             chart: {
                 type: 'column'
             },
+            credits: {
+                enabled: false
+            },
             colors: ["#3266cb"],
             title: {
                 text: 'Total Detox AMAs'
@@ -46,10 +49,7 @@ angular.module('testechart')
             $scope.$broadcast('highchartsng.reflow');
         };
 
-        $scope.voltar = function () {
-            $location.path("/principal");
-        }
-
+     
 
 
     }]);
