@@ -19,7 +19,7 @@ angular.module('testechart')
                 "#3065c9"
             ],
             title: {
-                text: '% AMAs by Case Manager'
+                text: '% Campaign Step Downs'
             },
             xAxis: {
                 title: {

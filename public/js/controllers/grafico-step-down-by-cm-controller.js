@@ -6,7 +6,7 @@ angular.module('testechart')
                 type: 'bar'
             },
             title: {
-                text: 'Current Census (from Bed Board)'
+                text: 'Step down by CM'
             },
             credits: {
                 enabled: false

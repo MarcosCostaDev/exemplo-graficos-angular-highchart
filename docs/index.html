@@ -2,17 +2,57 @@
 
 <head>
     <title>
-Exemplo de grafico no Angular
+        Charts
     </title>
     <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="css/lib/bootstrap-combined.min.css" />
-     <script src="js/all.js"></script>
 
+     <script src="js/all.js"></script>
 </head>
 
 <body>
-   <div class="main container" ng-view> 
-    </div>
+      
+ <div class="container"> <!--container -->
+                <div class="jumbotron"> <!-- jumbotron -->
+                    <div class="container"> <!--container -->
+                        <h1>Charts</h1> 
+                    </div> <!--container -->                   
+                </div> <!--jumbotron -->
+
+
+                <div class="navbar navbar-default"><!-- Sidebar -->
+                    <ul class="nav navbar-nav" ng-controller="MenuController">
+                        <li> <a href="#/graficoCurrentCensus">Current Census</a></li>
+                        <li>  <a href="#/totalNewclients">Total New Clients & Readmit clients</a></li>
+                        <li> <a href="#/graficoColunm">Step Down Count</a></li>
+                        <li> <a href="#/graficoTotalDetoxAmas">Total Detox AMAs</a></li>
+                        <li>  <a href="#/graficoTotalDetoxAmasPercent">% Total Detox AMAs</a></li>
+                        <li>  <a href="#/graficoTotalDetoxAmasTreatment">Total Detox Clients & Treatment Clients</a></li>
+                        <li> <a href="#/graficoCampaignStepDown">Campaign Step Downs</a></li>
+                        <li>  <a href="#/graficoCampaignStepDownPercent">% Campaign Step Down</a></li>
+                        <li>  <a href="#/amasByCaseManage">AMAs by Case Manage</a></li>
+                        <li>  <a href="#/amasByCaseManagePercent">% AMAs by Case Manage</a></li>
+                        <li>  <a href="#/graficoStepDownByCm">Step Down By CM</a></li>
+
+                    </ul>
+                </div>
+
+            <div id="page-content-wrapper"> <!-- page-content-wrapper -->
+                        <div class="container-fluid"> <!-- container-fluid -->
+                        
+                            
+                        <ng-view>
+                    
+                        </div>
+            </div> <!-- page-content-wrapper -->
+
+      
+
+     </div> <!--container -->
+        
+
+        
+         
 </body>
 
 </html>

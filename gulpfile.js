@@ -9,7 +9,7 @@ var gulp = require("gulp")
 
 
 gulp.task("default", ['copy'], function () {
-    gulp.start("build-js", "build-html");
+    gulp.start("build-js", "build-html", "server-producao");
 });
 
 gulp.task("copy", ["clean"], function () {
