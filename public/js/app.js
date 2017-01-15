@@ -58,16 +58,22 @@ var testechart = angular.module('testechart', ["highcharts-ng", "ngRoute"]).conf
         templateUrl: "partials/grafico-partial.html"
         , controller: "graficoCampaignStepDownPercentController"
       })
-       .when("/amasByCaseManage"
+      .when("/amasByCaseManage"
       , {
         templateUrl: "partials/grafico-partial.html"
         , controller: "amasByCaseManageController"
       })
-       .when("/amasByCaseManagePercent"
+      .when("/amasByCaseManagePercent"
       , {
         templateUrl: "partials/grafico-partial.html"
         , controller: "amasByCaseManagePercentController"
       })
+      .when("/graficoStepDownByCm"
+      , {
+        templateUrl: "partials/grafico-partial.html"
+        , controller: "graficoStepDownByCmController"
+      })
+
 
       .otherwise(
       {

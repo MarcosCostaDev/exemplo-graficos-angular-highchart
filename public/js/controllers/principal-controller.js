@@ -37,11 +37,14 @@ angular.module('testechart')
             $location.path("/graficoCampaignStepDownPercent");
         }
 
-         $scope.amasByCaseManage = function () {
+        $scope.amasByCaseManage = function () {
             $location.path("/amasByCaseManage");
         }
-        $scope.amasByCaseManagePercent= function () {
+        $scope.amasByCaseManagePercent = function () {
             $location.path("/amasByCaseManagePercent");
+        }
+        $scope.graficoStepDownByCm = function () {
+            $location.path("/graficoStepDownByCm");
         }
 
     }]);
