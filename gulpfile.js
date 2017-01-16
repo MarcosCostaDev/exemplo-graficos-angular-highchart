@@ -36,7 +36,6 @@ gulp.task("build-js", function () {
             "docs/js/lib/highcharts-more.js",
             "docs/js/lib/funnel.js",
             "docs/js/app.js",
-            "docs/js/controllers/principal-controller.js",
             "docs/js/controllers/*.js"
 
         ])
